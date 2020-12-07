@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/en/configuration.html
  */
 
+const database = require("./src/config/database");
+
 module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -17,13 +19,13 @@ module.exports = {
   clearMocks: true,
 
   // Indicates whether the coverage information should be collected while executing the test
-  // collectCoverage: false,
+  collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  // collectCoverageFrom: undefined,
+  collectCoverageFrom: ["src/**", "!src/database/migrations/**"],
 
   // The directory where Jest should output its coverage files
-  // coverageDirectory: undefined,
+  coverageDirectory: "__tests__/coverage",
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
